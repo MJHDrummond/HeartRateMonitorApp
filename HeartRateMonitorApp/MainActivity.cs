@@ -15,6 +15,7 @@ namespace HeartRateMonitorApp
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        private Button _bluetoothButton;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -27,25 +28,24 @@ namespace HeartRateMonitorApp
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
-            // Set our view from the "main" layout resource  
-            //SetContentView(Resource.Layout.activity_main); //Already done above
-            //Button test_button = FindViewById<Button>(Resource.Id.test_button);
-            //test_button.Click += delegate {
-            //    testButtonClick();
-            //};
+            FindViews();
+            LinkEventHandlers();
+        }
 
+        private void LinkEventHandlers()
+        {
+            _bluetoothButton.Click += _bluetoothButton_Click;
+        }
 
-            Button bluetooth_button = FindViewById<Button>(Resource.Id.bluetooth_button);
-            bluetooth_button.Click += delegate {
-                //StartActivity(typeof(BluetoothActivity));
+        private void _bluetoothButton_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(BluetoothActivity));
+            StartActivity(intent);
+        }
 
-                SetContentView(Resource.Layout.activity_main);
-                var intent = new Intent(this, typeof(BluetoothActivity));
-                //intent.PutExtra("SelectedCoinName", mItems[e.Position].CoinName);
-                //intent.PutExtra("PositionToUse", e.Position);
-                StartActivity(intent);
-            };
-
+        private void FindViews()
+        {
+            _bluetoothButton = FindViewById<Button>(Resource.Id.bluetooth_button);
         }
 
         private void testButtonClick()
