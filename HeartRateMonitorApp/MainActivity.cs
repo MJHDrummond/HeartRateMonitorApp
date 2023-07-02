@@ -48,11 +48,6 @@ namespace HeartRateMonitorApp
             _bluetoothButton = FindViewById<Button>(Resource.Id.bluetooth_button);
         }
 
-        private void testButtonClick()
-        {
-            Toast.MakeText(this, " This is a test click", ToastLength.Short).Show();
-        }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
