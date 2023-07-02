@@ -9,7 +9,7 @@
         android:text="@string/main_page" 
         android:layout_width="match_parent" 
         android:layout_height="wrap_content" 
-        android:id="@+id/bluetooth_button" />
+        android:id="@+id/main_button" />
 
     <!--<include layout="@layout/content_bluetooth" />-->
 

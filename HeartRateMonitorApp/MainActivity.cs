@@ -8,6 +8,7 @@ using AndroidX.AppCompat.App;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
 using Android.Widget;
+using Android.Content;
 
 namespace HeartRateMonitorApp
 {
@@ -28,15 +29,23 @@ namespace HeartRateMonitorApp
 
             // Set our view from the "main" layout resource  
             //SetContentView(Resource.Layout.activity_main); //Already done above
-            Button test_button = FindViewById<Button>(Resource.Id.test_button);
-            test_button.Click += delegate {
-                testButtonClick();
+            //Button test_button = FindViewById<Button>(Resource.Id.test_button);
+            //test_button.Click += delegate {
+            //    testButtonClick();
+            //};
+
+
+            Button bluetooth_button = FindViewById<Button>(Resource.Id.bluetooth_button);
+            bluetooth_button.Click += delegate {
+                //StartActivity(typeof(BluetoothActivity));
+
+                SetContentView(Resource.Layout.activity_main);
+                var intent = new Intent(this, typeof(BluetoothActivity));
+                //intent.PutExtra("SelectedCoinName", mItems[e.Position].CoinName);
+                //intent.PutExtra("PositionToUse", e.Position);
+                StartActivity(intent);
             };
 
-            Button main_button = FindViewById<Button>(Resource.Id.main_button);
-            main_button.Click += delegate {
-                StartActivity(typeof(BluetoothActivity));
-            };
         }
 
         private void testButtonClick()

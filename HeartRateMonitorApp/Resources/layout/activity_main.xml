@@ -6,16 +6,10 @@
     android:layout_height="match_parent">
     
     <Button 
-        android:text="@string/test_button" 
-        android:layout_width="match_parent" 
-        android:layout_height="wrap_content" 
-        android:id="@+id/test_button" />
-
-    <Button 
         android:text="@string/bluetooth_page" 
         android:layout_width="match_parent" 
         android:layout_height="wrap_content" 
-        android:id="@+id/main_button" />
+        android:id="@+id/bluetooth_button" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

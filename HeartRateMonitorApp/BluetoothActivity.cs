@@ -10,9 +10,10 @@ namespace HeartRateMonitorApp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_bluetooth);
-            Button bluetooth_button = FindViewById<Button>(Resource.Id.bluetooth_button);
-            bluetooth_button.Click += delegate {
+            Button main_button = FindViewById<Button>(Resource.Id.main_button);
+            main_button.Click += delegate {
                 StartActivity(typeof(MainActivity));
             };
             // Create your application here 
