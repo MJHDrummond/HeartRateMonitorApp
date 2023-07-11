@@ -63,6 +63,7 @@
     <Compile Include="Authentication\AuthorizationProvider.cs" />
     <Compile Include="BluetoothActivity.cs" />
     <Compile Include="Bluetooth\BluetoothDeviceReceiver.cs" />
+    <Compile Include="Bluetooth\MyScanCallBack.cs" />
     <Compile Include="Extensions\IntentExtensions.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\AuthorizationResult.cs" />
