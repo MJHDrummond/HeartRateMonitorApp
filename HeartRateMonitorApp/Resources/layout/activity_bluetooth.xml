@@ -16,8 +16,13 @@
         android:text="@string/scan_button_text" 
         android:layout_width="match_parent" 
         android:layout_height="wrap_content" 
-        android:id="@+id/scanButton" 
-        android:onClick="OnScanButtonClick"/>
-
+        android:id="@+id/scanButton" />
+    <ListView
+        android:id="@+id/deviceListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
     <!--<include layout="@layout/content_bluetooth" />-->
 </LinearLayout>
